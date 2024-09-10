@@ -15,11 +15,6 @@ interface Message {
 }
 
 const ChatWindow = () => {
-  const [conversations, setConversations] = useState([
-    { id: 1, title: "Dealing with Anxiety" },
-    { id: 2, title: "Improving Sleep Habits" },
-    { id: 3, title: "Managing Stress" },
-  ]);
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -85,7 +80,6 @@ const ChatWindow = () => {
         }}
         userProfile={userProfile}
         setUserProfile={setUserProfile}
-        setConversations={setConversations}
         handleLogout={handleLogout} // Pass handleLogout to Navbar
       />
 
