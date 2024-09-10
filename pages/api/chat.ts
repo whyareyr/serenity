@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getOpenAIResponse } from "@/app/lib/openai";
+import { getOpenAIResponse } from "@/app/lib/openaigpt";
 import { getSession } from "next-auth/react";
 
 interface ChatRequest extends NextApiRequest {
