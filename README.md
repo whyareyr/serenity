@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Serenity AI
+Serenity AI is a project designed to provide a user-friendly and intuitive platform for interacting with AI. It features various components and functionalities aimed at enhancing user experience and productivity.
 
-## Getting Started
+Features
+Chat Interface: Engage with the AI through a chat window.
+User Profile Management: Update and manage your profile information.
+Mental Wellbeing Resources: Access articles and tips for mental wellbeing.
+Dynamic Conversation Management: Create and manage conversations.
+Getting Started
+To get started with Serenity AI, follow these steps:
 
-First, run the development server:
+Prerequisites
+Ensure you have the following installed:
 
-```bash
+Node.js (v16 or higher)
+Git
+Installation
+Clone the Repository
+
+bash
+Copy code
+git clone https://github.com/whyareyr/serenity.git
+Navigate to the Project Directory
+
+bash
+Copy code
+cd serenity
+Install Dependencies
+
+bash
+Copy code
+npm install
+Run the Development Server
+
+bash
+Copy code
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Open your browser and visit http://localhost:3000 to see the application in action.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Configuration
+Before running the application, ensure you have configured any necessary environment variables. You might need to set up API keys or other credentials based on the features you are using.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Contributing
+Contributions are welcome! If you have suggestions or improvements, please follow these steps:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Fork the Repository
+Create a New Branch
+Make Your Changes
+Submit a Pull Request
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-## Learn More
+Contact
+For any questions or support, feel free to reach out to Your Name.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
