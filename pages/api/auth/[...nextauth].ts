@@ -1,6 +1,5 @@
-import NextAuth from "next-auth";
+import NextAuth from "next-auth/next";
 import GoogleProvider from "next-auth/providers/google";
-
 export default NextAuth({
   providers: [
     GoogleProvider({
@@ -11,7 +10,10 @@ export default NextAuth({
   secret: process.env.JWT_SECRET, // for session encryption
   callbacks: {
     async session({ session, token }) {
-      session.user.id = token.sub;
+      if (session.user) {
+        session.user.id = token.sub || "";
+      }
+
       return session;
     },
   },

@@ -18,10 +18,15 @@ export async function getOpenAIResponse(message: string): Promise<string> {
     });
 
     // Extract and return the content of the response
-    const completionText = completion.choices[0].message.content.trim();
+    const completionText = completion.choices[0]?.message?.content?.trim();
+    if (!completionText) {
+      throw new Error("No completion text found");
+    }
     return completionText;
   } catch (error) {
-    console.error("Error:", error.message);
-    throw new Error("Failed to get response from OpenAI");
+    if (error instanceof Error) {
+      console.error("Error:", error.message);
+    }
+    return "Sorry, I could not process your request."; // Return a default message on error
   }
 }

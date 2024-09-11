@@ -28,6 +28,10 @@ const ChatWindow = () => {
   // Fetch user session if using NextAuth.js
   const { data: session } = useSession();
 
+  const setConversations = () => {
+    // Placeholder function; add actual logic here if needed
+  };
+
   useEffect(() => {
     // If session is available, update user profile
     if (session?.user) {
@@ -51,15 +55,19 @@ const ChatWindow = () => {
       ]);
       setInputMessage("");
     } catch (error) {
-      console.error("Error:", error.message);
+      console.error("Error:", error instanceof Error ? error.message : error);
     } finally {
       setLoading(false);
     }
   };
 
   const handleLogout = () => {
-    // Implement logout logic
     signOut(); // Use next-auth's signOut function
+  };
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+    document.documentElement.classList.toggle("dark", !darkMode);
   };
 
   return (
@@ -74,13 +82,12 @@ const ChatWindow = () => {
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
         darkMode={darkMode}
-        toggleDarkMode={() => {
-          setDarkMode(!darkMode);
-          document.documentElement.classList.toggle("dark", !darkMode);
-        }}
+        toggleDarkMode={toggleDarkMode}
         userProfile={userProfile}
         setUserProfile={setUserProfile}
-        handleLogout={handleLogout} // Pass handleLogout to Navbar
+        setConversations={setConversations}
+        // Remove setConversations if not needed
+        handleLogout={handleLogout}
       />
 
       {/* Main Content */}
