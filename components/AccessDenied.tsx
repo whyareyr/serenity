@@ -7,7 +7,7 @@ const AccessDeniedPage = () => {
 
       {/* Main Heading */}
       <h1 className="text-5xl font-extrabold mb-4 text-center">
-        Welcome to Serenity
+        Welcome to Serenity 😇
       </h1>
 
       {/* Subtitle */}

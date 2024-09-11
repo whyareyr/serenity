@@ -1,3 +1,4 @@
+// components/Navbar.tsx
 "use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
@@ -61,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({
       </ScrollArea>
       <div className="p-4 border-t border-white/20">
         <div className="bg-gray-800 p-4 mb-4">
-          <h4 className="text-md font-semibold leading-none ">
+          <h4 className="text-md font-semibold leading-none">
             Mental Wellbeing Articles
           </h4>
         </div>

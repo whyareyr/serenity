@@ -1,4 +1,3 @@
-// components/MessageDisplay.tsx
 "use client";
 import React from "react";
 import { Avatar } from "@/components/ui/avatar";
@@ -16,39 +15,44 @@ interface MessageDisplayProps {
 
 const MessageDisplay: React.FC<MessageDisplayProps> = ({ messages }) => {
   return (
-    <>
-      {messages.map((message) => (
-        <div
-          key={message.id}
-          className={`flex ${
-            message.sender === "user" ? "justify-end" : "justify-start"
-          } mb-4`}
-        >
+    <div>
+      {/* Check if messages are empty and render a default message if true */}
+      {messages.length === 0 ? (
+        <div className="text-gray-500 size-full mt-[120px] translate-y-1"></div>
+      ) : (
+        messages.map((message) => (
           <div
+            key={message.id}
             className={`flex ${
-              message.sender === "user" ? "flex-row-reverse" : "flex-row"
-            } items-start max-w-3xl`}
+              message.sender === "user" ? "justify-end" : "justify-start"
+            } mb-4`}
           >
-            <Avatar className="h-8 w-8">
-              {message.sender === "user" ? (
-                <UserIcon className="h-6 w-6" />
-              ) : (
-                <BotIcon className="h-6 w-6" />
-              )}
-            </Avatar>
             <div
-              className={`mx-2 p-3 rounded-lg ${
-                message.sender === "user"
-                  ? "bg-teal-500 text-white"
-                  : "bg-gray-200 dark:bg-gray-700"
-              }`}
+              className={`flex ${
+                message.sender === "user" ? "flex-row-reverse" : "flex-row"
+              } items-start max-w-3xl`}
             >
-              {message.content}
+              <Avatar className="h-8 w-8">
+                {message.sender === "user" ? (
+                  <UserIcon className="h-6 w-6" />
+                ) : (
+                  <BotIcon className="h-6 w-6" />
+                )}
+              </Avatar>
+              <div
+                className={`mx-2 p-3 rounded-lg ${
+                  message.sender === "user"
+                    ? "bg-teal-500 text-white"
+                    : "bg-gray-200 dark:bg-gray-700"
+                }`}
+              >
+                {message.content}
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-    </>
+        ))
+      )}
+    </div>
   );
 };
 

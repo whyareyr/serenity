@@ -30,7 +30,7 @@ const MessageInput: React.FC<MessageInputProps> = ({
       <Textarea
         value={inputMessage}
         onChange={(e) => setInputMessage(e.target.value)}
-        placeholder="Type your message here..."
+        placeholder="Type your message here 😇..."
         className="flex-grow resize-none dark:bg-gray-800 dark:text-gray-100"
         rows={1}
       />
@@ -40,7 +40,11 @@ const MessageInput: React.FC<MessageInputProps> = ({
         className="bg-teal-500 hover:bg-teal-600 dark:bg-teal-600 dark:hover:bg-teal-700"
         disabled={loading}
       >
-        {loading ? "Sending..." : <SendIcon className="h-4 w-4" />}
+        {loading ? (
+          <div className="w-6 h-6 border-4 border-t-4 border-gray-300 border-t-blue-500 rounded-full animate-spin mr-2"></div>
+        ) : (
+          <SendIcon className="h-4 w-4" />
+        )}
       </Button>
     </form>
   );
